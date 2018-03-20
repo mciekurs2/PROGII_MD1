@@ -12,6 +12,9 @@ namespace MD1
 {
     public partial class Form1 : Form
     {
+
+        public int rez; //global val
+
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +26,16 @@ namespace MD1
             int vert1 = int.Parse(skaitlis1.Text);
             int vert2 = int.Parse(skaitlis2.Text);
 
-            int rez = vert1 * vert2;
+            try
+            {
+                rez = vert1 % vert2;
+            }
+            catch (System.DivideByZeroException ex)
+            {
+                MessageBox.Show("Nedrīgst dalit ar 0", "Kļūdas paziņojums",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
             finalValue.Text = rez.ToString();
 
@@ -33,7 +45,7 @@ namespace MD1
         //Pievieno keyPressEvent
         private void skaitlis1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            // var izmantot ari (e.KeyChar != '-'), bet tad rezultati ir ikta nepareizi
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 //izveido MessageBox

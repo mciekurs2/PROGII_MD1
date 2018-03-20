@@ -47,14 +47,14 @@
             // 
             // finalValue
             // 
-            this.finalValue.Location = new System.Drawing.Point(265, 72);
+            this.finalValue.Location = new System.Drawing.Point(281, 72);
             this.finalValue.Name = "finalValue";
             this.finalValue.Size = new System.Drawing.Size(100, 20);
             this.finalValue.TabIndex = 5;
             // 
             // skaitlis2
             // 
-            this.skaitlis2.Location = new System.Drawing.Point(140, 72);
+            this.skaitlis2.Location = new System.Drawing.Point(155, 72);
             this.skaitlis2.Name = "skaitlis2";
             this.skaitlis2.Size = new System.Drawing.Size(100, 20);
             this.skaitlis2.TabIndex = 3;
@@ -66,29 +66,27 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 20);
+            this.label1.Size = new System.Drawing.Size(220, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Reizinashana";
+            this.label1.Text = "mod (tikai pozitiviem skaitļiem)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(122, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 13);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "x";
-
+            this.label2.Text = "mod";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(246, 75);
+            this.label3.Location = new System.Drawing.Point(262, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "=";
-
             // 
             // rezButton
             // 
