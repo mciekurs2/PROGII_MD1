@@ -53,7 +53,7 @@ namespace MD1
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
 
-                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka skiatlis1: {e.KeyChar}");
+                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka `skaitlis1`: {e.KeyChar}");
                 //izveido MessageBox
                 MessageBox.Show("Lūdzu ievadiet skaitli!", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,7 +71,7 @@ namespace MD1
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
 
-                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka skiatlis2: {e.KeyChar}");
+                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka `skaitlis2`: {e.KeyChar}");
                 //izveido MessageBox
                 MessageBox.Show("Lūdzu ievadiet skaitli!", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,8 +88,7 @@ namespace MD1
             Console.WriteLine(logMessage);
             using (StreamWriter writer = new StreamWriter(FileDate() + ".txt", true))
             {
-                writer.WriteLine(logMessage);
-                writer.WriteLine();
+                writer.WriteLine(DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt") + ": " + logMessage);
             }
         }
 
