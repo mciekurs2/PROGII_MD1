@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,9 +30,12 @@ namespace MD1
             try
             {
                 rez = vert1 % vert2;
+                LogThis($"Veikt aprēķins: {vert1} mod {vert2} = {rez}");
             }
             catch (System.DivideByZeroException ex)
             {
+
+                LogThis($"Radies kļūdas paziņojums dalot ar 0: {vert1} mod {vert2} ");
                 MessageBox.Show("Nedrīgst dalit ar 0", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -48,6 +52,8 @@ namespace MD1
             // var izmantot ari (e.KeyChar != '-'), bet tad rezultati ir ikta nepareizi
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
+
+                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka skiatlis1: {e.KeyChar}");
                 //izveido MessageBox
                 MessageBox.Show("Lūdzu ievadiet skaitli!", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -64,6 +70,8 @@ namespace MD1
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
+
+                LogThis($"Centies ievadit vertibu kas nav skaitlis lauka skiatlis2: {e.KeyChar}");
                 //izveido MessageBox
                 MessageBox.Show("Lūdzu ievadiet skaitli!", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,6 +80,22 @@ namespace MD1
             }
 
 
+        }
+
+
+        static void LogThis(string logMessage)
+        {
+            Console.WriteLine(logMessage);
+            using (StreamWriter writer = new StreamWriter(FileDate() + ".txt", true))
+            {
+                writer.WriteLine(logMessage);
+                writer.WriteLine();
+            }
+        }
+
+        static string FileDate()
+        {
+            return DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd");
         }
 
 
