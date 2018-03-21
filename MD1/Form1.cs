@@ -58,7 +58,7 @@ namespace MD1
                 MessageBox.Show("Lūdzu ievadiet skaitli!", "Kļūdas paziņojums",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                e.Handled = true;
+                e.Handled = true; 
             }
 
 
